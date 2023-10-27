@@ -1,12 +1,12 @@
 package cn.edu.tyut;
 
 import cn.edu.tyut.entity.User;
+import lombok.SneakyThrows;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -21,14 +21,19 @@ import java.util.Scanner;
  * @Time 13:02
  */
 public class demo_01 {
+    /* Lombok注解@SneakyThrows，它可以为我们的代码生成一个try...catch块，并把异常向上抛出来。
+     * @SneakyThrows可以用来偷偷抛出已检查的异常而不在方法的throws子句中实际声明这一点。
+     * 应该谨慎使用该注解。
+     */
+    @SneakyThrows
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         InputStream inputStream = null;
-        try {
-            inputStream = Resources.getResourceAsStream("mybatis-config.xml");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+        inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
             // 查找一个用户数据
