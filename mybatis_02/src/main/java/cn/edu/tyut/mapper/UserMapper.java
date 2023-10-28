@@ -1,7 +1,5 @@
 package cn.edu.tyut.mapper;
 
-import cn.edu.tyut.entity.User;
-
 import java.util.List;
 
 /**
@@ -14,5 +12,5 @@ import java.util.List;
  */
 // 通过namespace来绑定到一个接口上
 public interface UserMapper {
-    List<User> getUserByIdOne();
+    List<cn.edu.tyut.entity.User> getUsers();
 }
