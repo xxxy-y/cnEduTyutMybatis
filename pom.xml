@@ -10,7 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>JDBC</module>
-        <module>mybatis</module>
+        <module>mybatis_01</module>
+        <module>mybatis_02</module>
     </modules>
 
     <properties>

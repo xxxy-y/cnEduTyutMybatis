@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间就是一个限定名，用来指定你要求的是哪个文件内的id为什么什么的sql语句-->
+<mapper namespace="cn.edu.tyue.mapper.UserMapper">
+    <select id="getUserByIdOne" resultType="User" parameterType="int">
+        SELECT *
+        FROM users
+        WHERE id = #{id}
+    </select>
+</mapper>
