@@ -12,6 +12,7 @@
         <module>JDBC</module>
         <module>mybatis_01</module>
         <module>mybatis_02</module>
+        <module>mybatis_03</module>
     </modules>
 
     <properties>
@@ -35,6 +36,13 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.5.13</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

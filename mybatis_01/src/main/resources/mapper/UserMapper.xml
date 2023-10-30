@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--命名空间就是一个限定名，用来指定你要求的是哪个文件内的id为什么什么的sql语句-->
 <mapper namespace="User">
-    <select id="getUserByIdOne" resultType="User" parameterType="int">
+    <select id="getUserByIdOne" resultType="User" parameterType="integer">
         SELECT *
         FROM users
         WHERE id = #{id}
@@ -27,7 +27,7 @@
         SET username = #{username}
         WHERE id = #{id}
     </update>
-    <delete id="DeleteUser" parameterType="int">
+    <delete id="DeleteUser" parameterType="integer">
         DELETE
         FROM users
         WHERE id = #{id};

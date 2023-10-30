@@ -38,6 +38,7 @@ public class demo_01 {
         try (SqlSession sqlSession = sqlSessionFactory.openSession(true)) {
             // 查找一个用户数据
             int selectId = scanner.nextInt();
+            scanner.nextLine();
             User selectUserById = sqlSession.selectOne("User.getUserByIdOne", selectId);
             System.out.println(selectUserById);
 

@@ -9,7 +9,7 @@
         FROM users
         WHERE id = #{id}
     </select>
-    <select id="getUserByNameOne" resultType="user" parameterType="string">
+    <select id="getUserByNameOne" resultType="User" parameterType="string">
         SELECT *
         FROM users
         WHERE username LIKE CONCAT('%', #{username}, '%');
