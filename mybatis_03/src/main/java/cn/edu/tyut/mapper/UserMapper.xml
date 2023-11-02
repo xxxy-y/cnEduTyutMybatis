@@ -4,17 +4,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--命名空间就是一个限定名，用来指定你要求的是哪个文件内的id为什么什么的sql语句-->
 <mapper namespace="cn.edu.tyut.mapper.UserMapper">
-    <select id="getUserByIdOne" resultType="User" parameterType="integer">
+    <resultMap type="cn.edu.tyut.entity.User" id="UserMap">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="age" property="age"/>
+        <result column="sex" property="sex"/>
+    </resultMap>
+    <select id="getUserByIdOne" resultType="User" parameterType="integer" resultMap="UserMap">
         SELECT *
         FROM users
         WHERE id = #{id}
     </select>
-    <select id="getUserByNameOne" resultType="User" parameterType="string">
+    <select id="getUserByNameOne" resultType="User" parameterType="string" resultMap="UserMap">
         SELECT *
         FROM users
         WHERE username LIKE CONCAT('%', #{username}, '%');
     </select>
-    <select id="selectUsers" resultType="User">
+    <select id="selectUsers" resultType="User" resultMap="UserMap">
         SELECT *
         FROM users
     </select>

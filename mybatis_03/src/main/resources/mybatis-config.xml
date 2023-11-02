@@ -28,6 +28,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mapper/UserMapper.xml"/>
+<!--        <mapper class="cn.edu.tyut.mapper.UserMapper"/>-->
+        <package name="cn.edu.tyut.mapper"/>
     </mappers>
 </configuration>
