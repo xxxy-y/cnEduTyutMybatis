@@ -24,7 +24,7 @@ class UserServiceImplTest {
     void selectUsers() {
         try (SqlSession sqlSession = MybatisUtils.getSession(true)) {
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-            List<User> users = userMapper.selectUsers();
+            List<Map> users = userMapper.selectUsers();
             users.forEach(System.out::println);
         }
     }

@@ -17,17 +17,8 @@
                 <property name="password" value="${password}"/>
             </dataSource>
         </environment>
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
-                <property name="url" value="${url}"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
-            </dataSource>
-        </environment>
     </environments>
     <mappers>
-        <mapper class="cn.edu.tyut.mapper.UserMapper"/>
+        <package name="cn.edu.tyut.mapper"/>
     </mappers>
 </configuration>

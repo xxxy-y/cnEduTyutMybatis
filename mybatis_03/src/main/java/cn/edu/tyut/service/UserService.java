@@ -14,7 +14,7 @@ import java.util.Map;
  * @Time 13:11
  */
 public interface UserService {
-    List<User> selectUsers();
+    List<Map> selectUsers();
 
     User getUserByIdOne(Integer id);
 

@@ -21,10 +21,10 @@ import java.util.Map;
  */
 public class UserServiceImpl implements UserService {
     @Override
-    public List<User> selectUsers() {
+    public List<Map> selectUsers() {
         try (SqlSession sqlSession = MybatisUtils.getSession(true)) {
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-            List<User> users = userMapper.selectUsers();
+            List<Map> users = userMapper.selectUsers();
             return users;
         }
     }

@@ -14,12 +14,13 @@ import java.util.Map;
  * @Time 13:07
  */
 public interface UserMapper {
-    List<User> selectUsers();
+    List<Map> selectUsers();
 
     User getUserByIdOne(Integer id);
 
     User getUserByNameOne(String username);
 
+    // 该SQL语句中的参数会通过名称来自动对应到传入user对象的参数
     int InsertUser(User user);
 
     int UpdateUser(Map<String, Object> hashMap);

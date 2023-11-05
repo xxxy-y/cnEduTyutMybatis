@@ -20,7 +20,7 @@
         FROM users
         WHERE username LIKE CONCAT('%', #{username}, '%');
     </select>
-    <select id="selectUsers" resultType="User" resultMap="UserMap">
+    <select id="selectUsers" resultType="map">
         SELECT *
         FROM users
     </select>
