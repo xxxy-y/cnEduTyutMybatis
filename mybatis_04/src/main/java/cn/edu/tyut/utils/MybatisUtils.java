@@ -26,7 +26,6 @@ public class MybatisUtils {
             throw new RuntimeException(e);
         }
     }
-
      private static SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
     public static SqlSession getSqlSession(boolean autocommit) {
