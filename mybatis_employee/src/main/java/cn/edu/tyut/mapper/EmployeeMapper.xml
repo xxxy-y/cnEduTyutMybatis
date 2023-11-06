@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间就是一个限定名，用来指定你要求的是哪个文件内的id为什么什么的sql语句-->
+<mapper namespace="cn.edu.tyut.mapper.EmployeeMapper">
+    <resultMap id="employee1" type="employee">
+        <id property="id" column="sId"/>
+        <result property="name" column="sName"/>
+        <result property="age" column="sAge"/>
+        <result property="position" column="sPosition"/>
+    </resultMap>
+<!--    <sql id="sql1">-->
+<!--        ${alias}.id, ${alias}.name, ${alias}.age, ${alias}.position-->
+<!--    </sql>-->
+<!--    <include refid="sql1"/>-->
+<!--    <property name="alias" value="t1"/>-->
+    <select id="selectEmployees" resultMap="employee1">
+        SELECT *
+        FROM employee
+    </select>
+    <!-- useGeneratedKeys="true" 会获取到由数据库内部生产的主键的值，默认为false，但是将其赋值给entity类中的哪个属性，需要keyProperty来指定，所以useGeneratedKeys可以和keyProperty搭配使用。
+         keyProperty="id" 是将获取到的数据库内部生产的主键的值赋值给entity类的id属性
+    -->
+    <insert id="insertEmployee" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO employee (sId, sName, sAge, sPosition)
+        VALUES (#{id}, #{name}, #{age}, #{position});
+    </insert>
+    <insert id="iEmployee">
+        # 必须指明 'resultType' or 'resultMap'
+        <selectKey order="BEFORE" keyProperty="id" resultType="Integer">
+            SELECT if(max(sId) is null , 1, max(sId) + 1) as newId FROM employee
+        </selectKey>
+        INSERT INTO employee(sId, sName, sAge, sPosition)
+        VALUES (#{id}, #{name}, #{age}, #{position});
+    </insert>
+    <update id="updateEmployee">
+        UPDATE employee
+        SET sId = #{id}
+        WHERE sName = #{name};
+    </update>
+</mapper>
