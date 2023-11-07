@@ -5,4 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/mybatis_02/src/main/resources" type="java-resource" />
     </content>
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="d8493f18-cc98-47f6-b352-75019fc63159" />
+  </component>
 </module>

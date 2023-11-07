@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--命名空间就是一个限定名，用来指定你要求的是哪个文件内的id为什么什么的sql语句-->
 <mapper namespace="cn.edu.tyut.mapper.UserMapper">
-    <select id="selectUsers" resultType="user">
+    <select id="selectUsers" resultType="User">
         SELECT *
         FROM users
     </select>
