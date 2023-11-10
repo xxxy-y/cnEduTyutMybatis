@@ -2,6 +2,8 @@ package cn.edu.tyut.entity;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @Author wqt19
  * @ClassName User
@@ -11,7 +13,7 @@ import lombok.Data;
  * @Package_Name cn.edu.tyut.entity
  */
 @Data
-public class User {
+public class User implements Serializable {
     private int id;
     private String username;
     private String sex;
