@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.tyut.mapper.CustomerMapper">
+    <cache/>
+    <resultMap id="CustomerWithOrderResult" type="customer">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="address" column="address"/>
+        <collection property="ordersList" ofType="Orders">
+            <id property="id" column="order_id"/>
+            <result property="number" column="number"/>
+        </collection>
+    </resultMap>
+    <select id="findCustomerWithOrders" resultMap="CustomerWithOrderResult">
+        SELECT customer.*, orders.id order_id, orders.number
+        FROM orders,
+             customer
+        WHERE customer.id = orders.userId
+          AND customer.id = #{id}
+    </select>
+    <resultMap id="get" type="Customer">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="address" column="address"/>
+        <!--        在嵌套查询中，<collection>标签的column属性设置为主表的关联字段，如果没有外键，可以省略<collection>标签中的column属性。select属性的值应该是关联对象的查询语句，且该语句需要返回与关联对象关联的主对象的外键字段值。    -->
+        <collection property="ordersList" column="id" ofType="orders"
+                    select="cn.edu.tyut.mapper.OrdersMapper.getOrders"/>
+    </resultMap>
+    <select id="getCustomer" resultMap="get">
+        SELECT *
+        FROM customer
+        WHERE id = #{id}
+    </select>
+</mapper>

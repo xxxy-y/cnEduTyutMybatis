@@ -16,6 +16,8 @@
         <module>mybatis_04</module>
         <module>mybatis_employee</module>
         <module>mybatis_trendsSQL</module>
+        <module>mybatis_complexQuery_oneForOne_oneToMany</module>
+        <module>mybatis_complexQuery_manyToMany</module>
     </modules>
 
     <properties>
