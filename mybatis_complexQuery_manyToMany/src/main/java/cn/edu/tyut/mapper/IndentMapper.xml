@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间就是一个限定名，用来指定你要求的是哪个文件内的id为什么什么的sql语句-->
+<mapper namespace="cn.edu.tyut.mapper.IndentMapper">
+    <cache/>
+    <resultMap id="OrdersWithProductResult" type="Indent">
+        <id property="id" column="id"/>
+        <result property="number" column="number"/>
+        <collection property="productList" column="id" ofType="Product" select="cn.edu.tyut.mapper.ProductMapper.findProductById"/>
+    </resultMap>
+    <select id="findOrdersWithProduct" resultMap="OrdersWithProductResult">
+        SELECT *
+        FROM indent
+        WHERE id = #{id}
+    </select>
+    <resultMap id="OrdersWithProductResult2" type="Indent">
+        <id property="id" column="id"/>
+        <result property="number" column="number"/>
+        <collection property="productList" ofType="Product">
+            <id property="id" column="pid"/>
+            <result property="name" column="name"/>
+            <result property="price" column="price"/>
+        </collection>
+    </resultMap>
+    <select id="findOrdersWithProduct2" resultMap="OrdersWithProductResult2">
+        SELECT indent.*, product.id pid, product.name, product.price
+        FROM product,
+             indent,
+             ordersitem
+        WHERE indent.number = ordersitem.orders_id
+          AND ordersitem.product_id = product.id
+          AND indent.id = #{id}
+    </select>
+</mapper>

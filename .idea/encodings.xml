@@ -11,6 +11,8 @@
     <file url="file://$PROJECT_DIR$/mybatis_03/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis_04/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis_04/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_annotate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis_annotate/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis_complexQuery_manyToMany/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis_complexQuery_manyToMany/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mybatis_complexQuery_oneForOne_oneToMany/src/main/java" charset="UTF-8" />
