@@ -9,14 +9,16 @@
         <result property="name" column="name"/>
         <result property="age" column="age"/>
         <result property="sex" column="sex"/>
-        <association property="card" column="card" javaType="IdCard" select="cn.edu.tyut.mapper.IdCardMapper.getIdCardById"/>
+        <!--        下面中的column="card"是用于指定参与嵌套查询的外键列名，javaType指明将什么类型的实体放入该对象的property指明的属性中    -->
+        <association property="card" javaType="IdCard" column="card"
+                     select="cn.edu.tyut.mapper.IdCardMapper.getIdCardById"/>
     </resultMap>
     <resultMap id="personNestResult" type="Person">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="age" column="age"/>
         <result property="sex" column="sex"/>
-        <association property="card" column="card" javaType="IdCard">
+        <association property="card" javaType="IdCard">
             <id property="id" column="id"/>
             <result property="code" column="code"/>
         </association>

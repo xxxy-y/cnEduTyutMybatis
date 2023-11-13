@@ -109,4 +109,19 @@ class UserMapperTest {
             user.forEach(System.out::println);
         }
     }
+
+    @Test
+    void findByMap1() {
+        try (SqlSession sqlSession = MybatisUtils.getSqlsession(true)) {
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("sex", "男");
+            List<Integer> arrayList = new ArrayList<>();
+            arrayList.add(3);
+            arrayList.add(5);
+            arrayList.add(14);
+            hashMap.put("ids", arrayList);
+            userMapper.findByMap1(hashMap).forEach(System.out::println);
+        }
+    }
 }

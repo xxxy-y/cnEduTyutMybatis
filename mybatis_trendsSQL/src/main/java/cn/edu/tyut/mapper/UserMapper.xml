@@ -90,7 +90,7 @@
         </foreach>
     </select>
 
-    <!--    在map中，open="(" close=")"必须没有    -->
+    <!--    在map中，open="(" close=")"可以没有    -->
     <select id="findByMap" resultType="User">
         SELECT * FROM users
         <where>
@@ -98,5 +98,12 @@
                 ${key} = #{value}
             </foreach>
         </where>
+    </select>
+
+    <select id="findByMap1" resultType="User">
+        SELECT * FROM users WHERE sex = #{sex} AND id in
+        <foreach collection="ids" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
     </select>
 </mapper>
