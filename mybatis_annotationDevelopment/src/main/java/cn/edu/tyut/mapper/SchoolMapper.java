@@ -14,8 +14,8 @@ import org.apache.ibatis.annotations.*;
 @CacheNamespace()
 public interface SchoolMapper {
     /**
-     * // @CacheNamespace()注解配置开启二级缓存
      * 注解插入对象
+     * // @CacheNamespace()注解配置开启二级缓存
      * @param school >>
      * @return >>
      */
