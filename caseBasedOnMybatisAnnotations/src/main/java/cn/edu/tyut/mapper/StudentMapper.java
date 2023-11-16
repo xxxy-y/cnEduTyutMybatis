@@ -34,10 +34,17 @@ public interface StudentMapper {
 
     /**
      * >>
-     *
+     * 可以使用@ResultMap(id)来使用xml文件定义映射规则
+     * 也可以使用@ConstructorArgs({
+     * 。        @Arg(column = "sid", javaType = int.class),
+     * 。        @Arg(column = "name", javaType = String.class)
+     * })注解来指定构造方法，但是这样的话，不会自己将属性值赋值给对象，需要自己处理。
+     * 可以使用@Options()注解来控制单个操作的缓存启用。控制单个操作的缓存启用。
+     * 当传入的参数为对象类型时，可以使用参数名称.属性的方式去让Mybatis知道我们要用的是哪个属性。
      * @param cid >>
      * @return >>
      */
+    @Options(useCache = false)
     @Results({
             @Result(id = true, property = "id", column = "id"),
             @Result(property = "className", column = "cid",
