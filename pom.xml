@@ -21,6 +21,7 @@
         <module>mybatis_annotate</module>
         <module>case_productCategory</module>
         <module>mybatis_annotationDevelopment</module>
+        <module>caseBasedOnMybatisAnnotations</module>
     </modules>
 
     <properties>

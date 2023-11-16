@@ -7,16 +7,18 @@ import java.io.Serializable;
 
 /**
  * @Author 羊羊
- * @ClassName School
+ * @ClassName Worker
  * @SubmitTime 周三
  * @DATE 2023/11/15
- * @Time 16:55
+ * @Time 19:45
  * @Package_Name cn.edu.tyut.entity
  */
 @Data
 @Accessors(chain = true)
-public class School implements Serializable {
-    private Integer sid;
+public class Worker implements Serializable {
+    private Integer id;
     private String name;
+    private Integer age;
     private String sex;
+    private Integer workerId;
 }
