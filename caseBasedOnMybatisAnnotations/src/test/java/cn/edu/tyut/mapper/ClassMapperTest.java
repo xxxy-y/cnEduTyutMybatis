@@ -4,8 +4,6 @@ import cn.edu.tyut.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * @Author 羊羊
  * @ClassName ClassMapperTest
