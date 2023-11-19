@@ -3,11 +3,10 @@ package cn.edu.tyut.mapper;
 import cn.edu.tyut.entity.Employee;
 import cn.edu.tyut.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Author wqt19
@@ -55,5 +54,12 @@ class EmployeeMapperTest {
             int i = employeeMapper.iEmployee(employee);
             System.out.println(i);
         }
+    }
+
+
+    @Test
+    void testLog(){
+        Logger logger = Logger.getLogger(EmployeeMapperTest.class);
+        logger.info("1231");
     }
 }

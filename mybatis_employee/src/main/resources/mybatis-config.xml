@@ -4,6 +4,9 @@
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="db.yml"/>
+    <settings>
+        <setting name="logImpl" value="LOG4J2"/>
+    </settings>
     <typeAliases>
         <package name="cn.edu.tyut.entity"/>
     </typeAliases>
