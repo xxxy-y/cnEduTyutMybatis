@@ -18,7 +18,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * @Package_Name cn.edu.tyut.mapper
  */
 class OrdersMapperTest {
-
     @Test
     void selectOrderByUserId() {
         try (SqlSession sqlSession = MybatisUtils.getSqlsession(true)) {

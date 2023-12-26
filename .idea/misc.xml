@@ -9,9 +9,11 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/mybatis_annotate/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis_teach/pom.xml" />
       </set>
     </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
   <component name="PWA">
     <option name="enabled" value="true" />

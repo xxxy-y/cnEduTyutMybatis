@@ -13,7 +13,6 @@ import org.junit.jupiter.api.Test;
  * @Package_Name cn.edu.tyut.mapper
  */
 class CategoryMapperTest {
-
     @Test
     void findWhite() {
         try (SqlSession sqlSession = MybatisUtils.getSqlsession(true)) {

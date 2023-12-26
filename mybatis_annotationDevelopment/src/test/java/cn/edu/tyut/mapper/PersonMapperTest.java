@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
  * @Package_Name cn.edu.tyut.mapper
  */
 class PersonMapperTest {
-
     @Test
     void selectPersonById() {
         try (SqlSession sqlSession = MybatisUtils.getSqlsession(true)) {

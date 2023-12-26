@@ -18,7 +18,6 @@
         <module>mybatis_trendsSQL</module>
         <module>mybatis_complexQuery_oneForOne_oneToMany</module>
         <module>mybatis_complexQuery_manyToMany</module>
-        <module>mybatis_annotate</module>
         <module>case_productCategory</module>
         <module>mybatis_annotationDevelopment</module>
         <module>caseBasedOnMybatisAnnotations</module>
